@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    font-family: Arial;
+}
+.container{
+    max-width: 1280px;
+    padding: 0 2%;
+    margin: 0 auto;
+}
+.clear{
+    clear: both;
+}
+header{
+    height: 250px;
+    padding:45px 0;
+    margin: 0 auto;
+}
+.nome{
+    color: rgb(0, 0, 0);
+    max-width: 100%;
+}
+.nome img{
+    width: 20%;
+    border-radius: 50%;
+    right: 10px;
+    top: -50px;
+    left: 40%;
+    float: right;
+}
+.titulo h2{
+    font-size: 45px;
+    text-align: center;
+    top: 0px;
+    right: 0px;
+    padding: 0px;
+    font-family: 'Montserrat' , sans-serif;
+}
+.titulo ul{
+    list-style-type: none; 
+    overflow: hidden;
+    text-align: left;
+}
+.titulo ul li{
+    margin: 0 auto;
+    position: relative;
+    top: 0px;
+    left: 35%;
+}
+.corpo{
+   max-width: 100%;
+   border: solid 1px #ccc;
+   padding: 0 300px;
+}
+.box{
+    
+    background-color:#330000;
+    padding: 10px 0;
+    max-width: 500px;
+    margin: 10px auto;
+}
+.texto{
+    margin-top: 00px;
+    width: 100%;
+    text-align: center;
+    float: center;
+    color: white;
+}
+.texto ul {
+    margin-bottom: 25px;
+    padding: 0 15%;
+    text-align: left;
+}
+.texto ul li{
+    list-style-position: outside;
+    color: black;
+    text-align: justify;
+}

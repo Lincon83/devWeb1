@@ -1,0 +1,35 @@
+[33mcommit 527960a4baaa2cb4b1bccdacbcf557e86c35b693[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Wander Alvarenga <wander.alvarenga@prosperi.local>
+Date:   Tue Mar 10 13:57:44 2020 -0300
+
+    Adicionado o index.html e css editados e quase finalizados
+
+[33mcommit 905c3a8fb2388782154b2535d9d7ef1a96a37c7d[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Alunos Laboratorio <aluno.laboratorio@faesa.br>
+Date:   Mon Mar 9 20:09:33 2020 -0300
+
+    Feito o menu, adicionado tópicos, necessário corrigir as listas
+
+[33mcommit b8a0b6961aabc410e961a69ad2926ec831e19c78[m
+Author: Alunos Laboratorio <aluno.laboratorio@faesa.br>
+Date:   Mon Mar 9 19:26:51 2020 -0300
+
+     Criação de separação da index,css,js
+
+[33mcommit 2ff13552ec8c340c16bd324ec9267ccd2334ef9e[m
+Author: Alunos Laboratorio <aluno.laboratorio@faesa.br>
+Date:   Mon Mar 9 19:19:43 2020 -0300
+
+    Adição do Html
+
+[33mcommit 9c39e6481b756f93fa337c578127e2c548036c3f[m
+Author: Alunos Laboratorio <aluno.laboratorio@faesa.br>
+Date:   Mon Mar 2 19:59:32 2020 -0300
+
+    função soma testada e implementada
+
+[33mcommit 647677108eccfa15559ac01151c6396e01577a84[m
+Author: Alunos Laboratorio <aluno.laboratorio@faesa.br>
+Date:   Mon Mar 2 19:55:07 2020 -0300
+
+    Meu primeiro commit
