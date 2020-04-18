@@ -1,0 +1,55 @@
+.corpo {
+    padding-right: 5%;
+    padding-left: 5%;
+    text-align: center;
+}
+
+.meio {
+    padding-right: 5%;
+    padding-left: 5%;
+    text-align: center;
+}
+
+.imagem {
+    max-width: 100%;
+    height: auto;
+}
+
+div.embed-responsive {
+    min-width: 100vw;
+    min-height: 80vh;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  
+  .tabelas{
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: center;
+   padding-bottom: 30px;
+   padding-top: 60px;
+  }
+
+  .cabeca{
+      text-align: center;
+      padding-top: 25px;
+  }
+
+  .wt{
+      padding-top: 35px;
+      text-align: justify;
+  }
