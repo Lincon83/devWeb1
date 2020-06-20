@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Cadastrar Casos da COVID-19</title>
+
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet" media="all">
+</head>
+        <!-- Incluir pessoas no sistema (nome, endereço, telefone celular, peso, altura e problemas de saúde), por meio de requisições POST;
+        Listar todas as pessoas, a partir de uma requisição GET e exibir os dados em uma tabela, abaixo do formulário de inclusão;
+        Ao clicar em um caso, abrir um modal com as informações da pessoa clicada;
+        Deletar uma pessoa específica a partir de um ID, também passado via URL, ao se clicar em um botão de deleção em uma linha específica;
+        Atualizar os dados de uma pessoa a partir do seu ID, a partir de um botão específico na mesma linha. -->
+<body class="fafafa grey lightem-5">
+    <div class="container z-deppth-3"> 
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Cadastrar Casos da COVID-19</h2>
+                    <form class="form" id="formPessoa" method="POST">
+                        
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        <div class="form-row m-b-55">
+                            <div class="name">Nome</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input id="primeiroNome" class="input--style-5" type="text" name="primeiroNome" class="validate" required>
+                                            <label class="label--desc">primeiro nome</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input id="ultimoNome"class="input--style-5" type="text" name="ultimoNome" class="validate" required>
+                                            <label class="label--desc">ultimo nome</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Endereço Completo</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input id="endCompleto" class="input--style-5" type="text" name="endCompleto" class="validate" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Problemas de saúde</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input id="problemaSaude" class="input--style-5" type="problemaSaude" name="problemaSaude" class="validate" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row m-b-55">
+                            <div class="name">Peso e Altura</div>
+                            <div class="value">
+                                <div class="row row-refine">
+                                    <div class="col-3">
+                                        <div class="input-group-desc">
+                                            <input id="peso" class="input--style-5" type="number" min="0" step="0.1" name="peso" class="validate" required>
+                                            <label class="label--desc">Peso</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="input-group-desc">
+                                            <input id="altura" class="input--style-5" type="number" min="0" step="0.1"  name="altura" class="validate" required>
+                                            <label class="label--desc">Altura</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row m-b-55">
+                            <div class="name">Celular</div>
+                            <div class="value">
+                                <div class="row row-refine">
+                                    <div class="col-3">
+                                        <div class="input-group-desc">
+                                            <input id="dddCelular" class="input--style-5" type="number"  min="0" name="ddd" class="validate" required>
+                                            <label class="label--desc">DDD</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="input-group-desc">
+                                            <input id="numCelular" class="input--style-5" type="number"  min="0" name="celular" class="validate" required>
+                                            <label class="label--desc">Número Celular</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button id="registrar" class="btn btn--radius-2 btn--red" 
+                                type="submit">Registrar </button>
+                            <button id="delRegistro" onclick="deletarRegistro()" class="btn btn--radius-2 btn--red text-center" 
+                                type="button">Deletar Registro</button>
+                        </div>
+                    </form>
+                    
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <br>
+                            <h5>Editar informaçoes</h5>
+                            <form class="form" id="formapessoae" method="POST">
+                                <div class="row ">
+            
+                                    <div class="input-field col s12 m12 l12" style="display: none;">
+                                        <label for="ide">id</label>
+                                        <input type="text" id="ide" name="ide" >
+                                    </div>
+            
+                                    <div class="input-field col s12 m12 l12">
+                                        <label for="nome">Nome</label>
+                                        <input type="text" id="nomee" name="nome" class=" validate" required>
+                                    </div>
+            
+                                    <div class="input-field col s12 m12 l12">
+                                        <label for="cep">CEP</label>
+                                        <input type="number" id="cepe" min="0" name="cep" class="validate" required />
+                                    </div>
+            
+                                    <div class="input-field col s12 m6 l6">
+                                        <label for="estado">Estado</label>
+                                        <input type="text" id="estadoe" name="estado" class="validate" required />
+                                    </div>
+            
+                                    <div class="input-field col s12 m6 l6">
+                                        <label for="cidade">Cidade</label>
+                                        <input type="text" id="cidadee" name="cidade" class="validate" required />
+                                    </div>
+            
+                                    <div class="input-field col s12 m12 l12">
+                                        <label for="rua">Rua / Avenida </label>
+                                        <input type="text" id="ruae" name="rua" class="validate" required />
+                                    </div>
+            
+                                    <div class="input-field col s12  m8 l6">
+                                        <label for="bairro">Bairro</label>
+                                        <input type="text" id="bairroe" name="bairro" class="validate" required />
+                                    </div>
+            
+                                    <div class="input-field col s12 m4 l6">
+                                        <label for="numero">Número </label>
+                                        <input type="number" min="0" id="numeroe" name="numero" class="validate" required />
+                                    </div>
+            
+                                    <div class="input-field col s12 m5 l4">
+                                        <label for="telefone">Telefone celular</label>
+                                        <input id="telefonee" name="telefone" type="number" min="0" class="validate" required />
+                                    </div>
+            
+                                    <div class="input-field col s6 m4 l4">
+                                        <label for="peso">peso</label>
+                                        <input id="pesoe" name="peso" type="number" min="0" step="0.1" class="validate" required />
+                                    </div>
+            
+                                    <div class="input-field col s6 m3 l4">
+                                        <label for="altura">altura</label>
+                                        <input id="alturae" name="altura" type="number" min="0" step="0.1" class="validate" required />
+                                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <br>
+    <br>
+    <div class="container z-depth-3">
+        <table class="responsive-table centered highlight">
+            <thead>
+                <tr>
+                    <th class="center-align">Nome Completo</th>
+                    <th class="center-align">Endereço Completo</th>
+                    <th class="center-align">Peso</th>
+                    <th class="center-align">Altura</th>
+                    <th class="center-align">ddd</th>
+                    <th class="center-align">Celular</th>
+
+                </tr>
+            </thead>
+
+            <tbody id="tabpessoa">
+
+            </tbody>
+
+            <tfoot>
+            </tfoot>
+        </table>
+       
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    
+    <script src="view/pessoaView.js"></script>
+    <script src="model/pessoaModel.js"></script>
+    <script src="controller/pessoaControl.js"></script>
+
+</body>
+
+</html>
